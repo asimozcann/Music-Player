@@ -269,6 +269,25 @@ volumeControl.addEventListener("input", function() {
         volumeSelect.classList.remove("fa-volume-xmark");
     }
 });
+let volumeVisible = true;
 
+
+function toggleVolumeIcon() {
+    if (volumeVisible) {
+        volumeSelect.classList.remove("fa-volume-high");
+        volumeSelect.classList.add("fa-volume-xmark");
+        volumeControl.value = 0; // Ses seviyesini sıfırla
+        mainAudio.volume = 0; // Ses seviyesini sıfırla
+    } else {
+        volumeSelect.classList.add("fa-volume-high");
+        volumeSelect.classList.remove("fa-volume-xmark");
+        volumeControl.value = 100; // Ses seviyesini sıfırla
+        mainAudio.volume = 1; // Ses seviyesini sıfırla
+    }
+
+    volumeVisible = !volumeVisible;
+}
+
+volumeSelect.addEventListener("click", toggleVolumeIcon);
 
 playingNow();

@@ -255,12 +255,16 @@ volumeControl.addEventListener("input", () => {
     mainAudio.volume = volumeValue / 100;
 
 });
-volumeControl.addEventListener("input", function() {
+
+function volmcont() {
     var volumeValue = volumeControl.value;
     var percentage = volumeValue + "%";
     var gradient = "linear-gradient(90deg, violet " + percentage + ", rgb(214, 214, 214) " + percentage + ")";
     volumeControl.style.backgroundImage = gradient;
+}
 
+volumeControl.addEventListener("input", function() {
+    volmcont();
     if (volumeValue == 0) {
         volumeSelect.classList.remove("fa-volume-high");
         volumeSelect.classList.add("fa-volume-xmark");
@@ -278,11 +282,13 @@ function toggleVolumeIcon() {
         volumeSelect.classList.add("fa-volume-xmark");
         volumeControl.value = 0; // Ses seviyesini sıfırla
         mainAudio.volume = 0; // Ses seviyesini sıfırla
+        volmcont();
     } else {
         volumeSelect.classList.add("fa-volume-high");
         volumeSelect.classList.remove("fa-volume-xmark");
         volumeControl.value = 100; // Ses seviyesini sıfırla
         mainAudio.volume = 1; // Ses seviyesini sıfırla
+        volmcont();
     }
 
     volumeVisible = !volumeVisible;

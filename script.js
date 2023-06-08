@@ -256,15 +256,14 @@ volumeControl.addEventListener("input", () => {
 
 });
 
-function volmcont() {
+
+volumeControl.addEventListener("input", function() {
+
     var volumeValue = volumeControl.value;
     var percentage = volumeValue + "%";
     var gradient = "linear-gradient(90deg, violet " + percentage + ", rgb(214, 214, 214) " + percentage + ")";
     volumeControl.style.backgroundImage = gradient;
-}
 
-volumeControl.addEventListener("input", function() {
-    volmcont();
     if (volumeValue == 0) {
         volumeSelect.classList.remove("fa-volume-high");
         volumeSelect.classList.add("fa-volume-xmark");
@@ -275,6 +274,12 @@ volumeControl.addEventListener("input", function() {
 });
 let volumeVisible = true;
 
+function volmpdt() {
+    var volumeValue = volumeControl.value;
+    var percentage = volumeValue + "%";
+    var gradient = "linear-gradient(90deg, violet " + percentage + ", rgb(214, 214, 214) " + percentage + ")";
+    volumeControl.style.backgroundImage = gradient;
+}
 
 function toggleVolumeIcon() {
     if (volumeVisible) {
@@ -282,13 +287,14 @@ function toggleVolumeIcon() {
         volumeSelect.classList.add("fa-volume-xmark");
         volumeControl.value = 0; // Ses seviyesini sıfırla
         mainAudio.volume = 0; // Ses seviyesini sıfırla
-        volmcont();
+        volmpdt();
     } else {
         volumeSelect.classList.add("fa-volume-high");
         volumeSelect.classList.remove("fa-volume-xmark");
-        volumeControl.value = 100; // Ses seviyesini sıfırla
-        mainAudio.volume = 1; // Ses seviyesini sıfırla
-        volmcont();
+        volumeControl.value = 100;
+        mainAudio.volume = 1;
+        volmpdt();
+
     }
 
     volumeVisible = !volumeVisible;

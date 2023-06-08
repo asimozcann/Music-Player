@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>Şimdi Çalıyor</span>
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div class="img-area">
+            <img src="">
+        </div>
+        <div class="song-area">
+            <span class="name"></span>
+            <p class="artist"></p>
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar">
+            </div>
+            <div class="timer">
+                <span class="current">0:00</span>
+                <span class="max-duration">0:00</span>
+
+            </div>
+
+            <audio id="main-audio"></audio>
+
+        </div>
+        <div class="volume">
+            <div class="volume-area">
+                <input type="range" min="0" max="100" value="100">
+            </div>
+            <i id="volume" class="fa-solid fa-volume-high"></i>
+
+        </div>
+
+        <div class="controls">
+
+            <i id="repeat" class="material-icons">repeat</i>
+            <i id="prev" class="fa-solid fa-backward-step"></i>
+            <div class="play-pause">
+                <i class="fa-sharp fa-solid fa-play"></i>
+
+            </div>
+            <i id="next" class="fa-solid fa-forward-step"></i>
+            <i id="more-music" class="material-icons">queue_music</i>
+        </div>
+        <div class="music-list">
+            <div class="header">
+                <div class="row">
+                    <i class="material-icons">queue_music</i>
+                    <span>Müzik Listesi</span>
+                </div>
+                <i id="close" class="fa-solid fa-xmark"></i>
+            </div>
+            <ul>
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="music-list.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+</html>
